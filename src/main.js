@@ -7,7 +7,41 @@ export default class App {
         }
         return suma;
     }
+    sumatoriaSerieDos(numero){
+        let suma = 0;
+        let i = 1;
+        while(i <= numero){
+            if(i == 1 || i%2 == 0){
+                suma = suma + (1 / i);
+            } else{
+                suma = suma - (1 / i);
+            }
+
+            i++;
+        }
+        return suma;
+
+    }
+    esPrimo(numero){
+        let primo = 0;
+        let i = numero;
+        do{
+            if(numero%i == 0){
+                primo++;
+            }
+            
+            i--;
+        } while(i>=1)
+        if(primo == 2){
+            return true;
+        } else {
+            return false;
+        }
+    
+    }
 }
 
 let app = new App();
 console.log(app.sumatoriaSerieUno(3));
+console.log(app.sumatoriaSerieDos(3));
+console.log(app.esPrimo(4));
