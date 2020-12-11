@@ -29,7 +29,7 @@ export default class App {
             if(numero%i == 0){
                 primo++;
             }
-            
+
             i--;
         } while(i>=1)
         if(primo == 2){
@@ -37,7 +37,22 @@ export default class App {
         } else {
             return false;
         }
-    
+    }
+    obtenerMultiplos(inicio, fin){
+        let l = "";
+        if (fin < inicio){
+            let n = inicio;
+            inicio = fin;
+            fin = n;
+        }
+        do{
+            if(inicio%3==0){
+                l = l + inicio.toString();
+            }
+
+            inicio++;
+        }while (inicio<=fin)
+        return l;
     }
 }
 
@@ -45,3 +60,4 @@ let app = new App();
 console.log(app.sumatoriaSerieUno(3));
 console.log(app.sumatoriaSerieDos(3));
 console.log(app.esPrimo(4));
+console.log(app.obtenerMultiplos(3,9));
